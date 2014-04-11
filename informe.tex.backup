@@ -1,0 +1,105 @@
+\documentclass[spanish,a4paper,10pt]{article}
+
+\usepackage{latexsym,amsfonts,amssymb,amstext,amsthm,float,amsmath}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{doc}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\ExecuteOptions{pdftex}%
+\AtEndOfPackage{%
+  \g@addto@macro\Gin@extensions{.eps.gz,.eps.zip}%
+  \@namedef{Gin@rule@.eps.gz}#1{{pdf}{.pdf}{`gunzip -c #1 | epstopdf -f >\Gin@base.pdf}}%
+  \@namedef{Gin@rule@.eps.zip}#1{{pdf}{.pdf}{`unzip -p #1 | epstopdf -f >\Gin@base.pdf}}%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%123456789012345678901234567890123456789012345678901234567890123456789
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\textheight    29cm
+%\textwidth     15cm
+%\topmargin     -4cm
+%\oddsidemargin  5mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{figure}
+\includegraphics[height=3cm, width=10cm]{imagen1.eps}
+\end{figure}
+\title{Informe del número $\pi$}
+\author{Daniel Montesdeoca Villaverde}
+\date{9 de abril de 2014}
+
+\maketitle
+
+\begin{abstract}
+ En este documento se tratará acerca del número $\pi$ calculado en \textsf{Python}.
+\end{abstract}
+
+%\thispagestyle{empty}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Motivación y Objetivos}
+
+Nuestro objetivo ha sido investigar el número $\pi$. Para ello se ha procedido a
+aproximar $\pi$ hasta 35 cifras decimales usando Python\footnote{Página web de Python:
+https://www.python.org}. También se ha
+creado una función para usar $\pi$ en Python y hallado el umbral de error del
+número $\pi$
+
+\begin{center}
+
+\end{center}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Procedimiento}
+En primer lugar, hay que aproximar $\pi$ hasta 35 decimales. Para ello se deben
+calcular los extremos de los subintervalos, el punto $x_i$, el valor de la función
+de aproximación del número $\pi$, el resultado del número $\pi$ y por último
+calcular $\pi$ con 35 decimales.
+\subsection{Pasos que se deben seguir}
+
+\begin{enumerate}
+  \item
+  Subintervalos.
+  \item
+  Punto $x_i$.
+  \item
+  Función de aproximación $fx_i$.
+  \item
+  Valor aproximado.
+  \item
+  Valor de $\pi$ con 35 decimales.
+\end{enumerate}
+
+Si utilizamos 4 subintervalos\footnote{Se pueden utilizar más, pero para este ejemplo
+nos vale}, el programa debería de quedar así:
+
+\begin{footnotesize}
+\begin{verbatim}
+Introduzca el número de intervalos (n > 0): 4
+Subintervalo: [0   , 0.25]   x_i: 0.125   fx_i: 3.93846
+Subintervalo: [0.25, 0.5 ]   x_i: 0.375   fx_i: 3.50685
+Subintervalo: [0.5 , 0.75]   x_i: 0.625   fx_i: 2.8764
+Subintervalo: [0.75, 1   ]   x_i: 0.875   fx_i: 2.26549
+
+El valor aproximado de PI es:  3.14680051839 
+El valor de PI con 35 decimales: 3.1415926535897931159979634685441852 \end{verbatim}
+\end{footnotesize}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{}
+En la tarea habilitada para esta práctica en el Aula Virtual, se subirá 
+la dirección del repositorio \textit{github} donde se ha almacenado la práctica. 
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Para saber más...}
+
+Amplíe el programa \textsf{Python} que ha desarrollado para que el número de
+subintervalos se pueda obtener también desde la línea de comandos.
+
+\begin{thebibliography}{1}
+\bibitem{python} Tutorial de Python. http://docs.python.org/2.7 
+\end{thebibliography}
+
+\end{document}
